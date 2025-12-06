@@ -14,6 +14,23 @@
             padding: 0;
             background: #f0f2f5;
             color: #222;
+            transition: 0.3s;
+        }
+
+        /* Dark mode */
+        body.dark {
+            background: #121212;
+            color: #e6e6e6;
+        }
+        body.dark .section {
+            background: #1d1d1d;
+            box-shadow: none;
+        }
+        body.dark .navbar {
+            background: #1d1d1d;
+        }
+        body.dark a {
+            color: #7ab6ff;
         }
 
         .navbar {
@@ -26,6 +43,7 @@
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            z-index: 100;
         }
 
         .nav-links a {
@@ -33,6 +51,7 @@
             text-decoration: none;
             color: #333;
             font-weight: 500;
+            transition: 0.2s;
         }
         .nav-links a:hover {
             color: #0077ff;
@@ -64,10 +83,10 @@
             font-weight: 700;
         }
 
-        .tagline {
-            color: #555;
+        .typing {
             font-size: 18px;
-            margin-top: -10px;
+            color: #555;
+            height: 24px;
         }
 
         .section {
@@ -78,7 +97,6 @@
             margin-bottom: 35px;
             transition: 0.25s;
         }
-
         .section:hover {
             transform: translateY(-3px);
         }
@@ -88,30 +106,6 @@
             color: #333;
             border-left: 4px solid #0077ff;
             padding-left: 10px;
-        }
-
-        ul li {
-            padding: 6px 0;
-        }
-
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .social-icons a {
-            margin-right: 18px;
-            font-size: 26px;
-        }
-
-        .footer {
-            text-align: center;
-            color: #777;
-            padding: 20px 0;
-            font-size: 14px;
         }
 
         .skills {
@@ -128,6 +122,45 @@
             font-size: 14px;
             font-weight: 500;
         }
+
+        .timeline {
+            border-left: 3px solid #0077ff;
+            padding-left: 20px;
+        }
+
+        .timeline-item {
+            margin-bottom: 20px;
+        }
+
+        .timeline-item h3 {
+            margin-bottom: 5px;
+        }
+
+        .btn {
+            background: #0077ff;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background: #005fcc;
+        }
+
+        .dark-toggle {
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            color: #777;
+            padding: 20px 0;
+            font-size: 14px;
+        }
     </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -140,8 +173,10 @@
     <div class="nav-links">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
+        <i class="fas fa-moon dark-toggle" onclick="toggleDark()"></i>
     </div>
 </div>
 
@@ -151,7 +186,7 @@
     <div class="header">
         <img src="https://via.placeholder.com/140" class="avatar" alt="Avatar">
         <h1>👋 Hi, I'm Khanh Linh</h1>
-        <p class="tagline">International Business Economics | Data & Research</p>
+        <p class="typing" id="typing"></p>
     </div>
 
     <!-- About Me -->
@@ -159,34 +194,50 @@
         <h2>About Me</h2>
         <p>
             I'm a third-year International Business Economics student at FTU, passionate about
-            global trade, financial markets, and data-driven economic research. I love transforming
-            complex data into meaningful insights and exploring how global trends shape business and policy.
+            global trade, financial markets, and data-driven economic research.
         </p>
+        <a class="btn" href="CV.pdf" download>📄 Download CV</a>
     </div>
 
     <!-- Projects -->
     <div class="section" id="projects">
         <h2>Projects</h2>
         <ul>
-            <li>📊 <strong>Trade Analysis Dashboard</strong> – Data visualization of global trade flows using Python & Excel</li>
-            <li>💹 <strong>Finance Research Notes</strong> – Analysis of exchange rates, capital flows, and monetary policy</li>
-            <li>📝 <strong>Academic Writing Collection</strong> – Research-based essays and economic reports</li>
-            <li>📈 <strong>Regression Econometrics Mini-Projects</strong> – OLS, panel data models, inflation & GDP analysis</li>
+            <li>📊 <strong>Trade Analysis Dashboard</strong> – Data visualization of global trade flows</li>
+            <li>💹 <strong>Finance Research Notes</strong> – Exchange rates, capital flows analysis</li>
+            <li>📝 <strong>Academic Writing</strong> – Policy briefs, research essays</li>
+            <li>📈 <strong>Econometrics Mini-Projects</strong> – OLS, panel data, macroeconomics</li>
         </ul>
+    </div>
+
+    <!-- Experience / Timeline -->
+    <div class="section" id="experience">
+        <h2>Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>📌 Research Assistant – FTU</h3>
+                <small>2024 - Present</small>
+                <p>Supporting research on trade policy and global supply chains.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>📌 Economics Writer</h3>
+                <small>2023 - Present</small>
+                <p>Writing academic essays and macroeconomic insights.</p>
+            </div>
+        </div>
     </div>
 
     <!-- Skills -->
     <div class="section" id="skills">
         <h2>Skills</h2>
         <div class="skills">
-            <div class="skill-pill">Data Analysis</div>
-            <div class="skill-pill">Econometrics (OLS/Panel)</div>
-            <div class="skill-pill">Stata</div>
             <div class="skill-pill">Python</div>
+            <div class="skill-pill">Stata</div>
+            <div class="skill-pill">Econometrics (OLS/Panel)</div>
+            <div class="skill-pill">Data Analysis</div>
             <div class="skill-pill">Excel</div>
-            <div class="skill-pill">International Finance</div>
             <div class="skill-pill">Research Writing</div>
-            <div class="skill-pill">Trade Policy</div>
+            <div class="skill-pill">International Finance</div>
         </div>
     </div>
 
@@ -194,17 +245,7 @@
     <div class="section" id="contact">
         <h2>Contact</h2>
         <p>Email: <a href="mailto:khanhlinh20082005@gmail.com">khanhlinh20082005@gmail.com</a></p>
-
         <div class="social-icons">
-            <a href="https://github.com/khanhlinh20082005-wq"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/linh-nguyen-khanh-a6807b266/"><i class="fab fa-linkedin"></i></a>
-        </div>
-    </div>
-
-    <div class="footer">© 2025 Khanh Linh. All rights reserved.</div>
-</div>
-
-</body>
-</html>
+            <a href="
 
 
