@@ -3,19 +3,43 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>Khanh Linh • Portfolio</title>
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
         body {
             font-family: "Inter", sans-serif;
             margin: 0;
             padding: 0;
-            background: #f5f5f5;
+            background: #f0f2f5;
             color: #222;
         }
 
+        .navbar {
+            background: #ffffffcc;
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            padding: 12px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: #0077ff;
+        }
+
         .container {
-            max-width: 750px;
+            max-width: 900px;
             margin: auto;
             padding: 40px 20px;
         }
@@ -26,81 +50,148 @@
         }
 
         .avatar {
-            width: 120px;
-            height: 120px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #ddd;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         h1 {
-            margin-top: 15px;
-            font-size: 32px;
+            margin-top: 18px;
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .tagline {
+            color: #555;
+            font-size: 18px;
+            margin-top: -10px;
         }
 
         .section {
             background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            margin-bottom: 35px;
+            transition: 0.25s;
+        }
+
+        .section:hover {
+            transform: translateY(-3px);
         }
 
         .section h2 {
             margin-top: 0;
             color: #333;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 5px;
+            border-left: 4px solid #0077ff;
+            padding-left: 10px;
+        }
+
+        ul li {
+            padding: 6px 0;
         }
 
         a {
             color: #0066cc;
             text-decoration: none;
         }
-
         a:hover {
             text-decoration: underline;
         }
 
         .social-icons a {
-            margin-right: 15px;
-            font-size: 24px;
+            margin-right: 18px;
+            font-size: 26px;
+        }
+
+        .footer {
+            text-align: center;
+            color: #777;
+            padding: 20px 0;
+            font-size: 14px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-pill {
+            background: #e8f1ff;
+            color: #0056c9;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
         }
     </style>
 
-    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 </head>
 <body>
 
+<!-- Navbar -->
+<div class="navbar">
+    <div class="logo"><strong>Khanh Linh</strong></div>
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
+
 <div class="container">
 
+    <!-- Header -->
     <div class="header">
-        <img src="https://via.placeholder.com/120" class="avatar" alt="Avatar">
+        <img src="https://via.placeholder.com/140" class="avatar" alt="Avatar">
         <h1>👋 Hi, I'm Khanh Linh</h1>
-        <p>📚 Third-year International Business Economics student at Foreign Trade University</p>
-        <p>🌍 Interested in global trade | finance | data-driven research</p>
+        <p class="tagline">International Business Economics | Data & Research</p>
     </div>
 
-    <div class="section">
+    <!-- About Me -->
+    <div class="section" id="about">
         <h2>About Me</h2>
         <p>
-            I’m passionate about global trade, international finance, and exploring how data shapes
-            global markets. I enjoy research projects and continuously learning new economic insights.
+            I'm a third-year International Business Economics student at FTU, passionate about
+            global trade, financial markets, and data-driven economic research. I love transforming
+            complex data into meaningful insights and exploring how global trends shape business and policy.
         </p>
     </div>
 
-    <div class="section">
+    <!-- Projects -->
+    <div class="section" id="projects">
         <h2>Projects</h2>
         <ul>
-            <li>📊 <strong>Trade Analysis Dashboard</strong> – data visualization for global trade flows</li>
-            <li>💹 <strong>Finance Research Notes</strong> – exploring exchange rates & capital flows</li>
-            <li>📝 <strong>Academic Writing Portfolio</strong></li>
+            <li>📊 <strong>Trade Analysis Dashboard</strong> – Data visualization of global trade flows using Python & Excel</li>
+            <li>💹 <strong>Finance Research Notes</strong> – Analysis of exchange rates, capital flows, and monetary policy</li>
+            <li>📝 <strong>Academic Writing Collection</strong> – Research-based essays and economic reports</li>
+            <li>📈 <strong>Regression Econometrics Mini-Projects</strong> – OLS, panel data models, inflation & GDP analysis</li>
         </ul>
     </div>
 
-    <div class="section">
+    <!-- Skills -->
+    <div class="section" id="skills">
+        <h2>Skills</h2>
+        <div class="skills">
+            <div class="skill-pill">Data Analysis</div>
+            <div class="skill-pill">Econometrics (OLS/Panel)</div>
+            <div class="skill-pill">Stata</div>
+            <div class="skill-pill">Python</div>
+            <div class="skill-pill">Excel</div>
+            <div class="skill-pill">International Finance</div>
+            <div class="skill-pill">Research Writing</div>
+            <div class="skill-pill">Trade Policy</div>
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="section" id="contact">
         <h2>Contact</h2>
         <p>Email: <a href="mailto:khanhlinh20082005@gmail.com">khanhlinh20082005@gmail.com</a></p>
 
@@ -110,7 +201,10 @@
         </div>
     </div>
 
+    <div class="footer">© 2025 Khanh Linh. All rights reserved.</div>
 </div>
 
 </body>
 </html>
+
+
